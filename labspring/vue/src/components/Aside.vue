@@ -5,6 +5,7 @@
            active-text-color="#ffd04b"
            :collapse-transition="false"
            :collapse="isCollapse"
+            router
   >
     <div style="height: 60px; line-height: 60px; text-align: center">
       <img src="../assets/logo.png" alt="" style="width: 20px; position: relative; top: 5px; right: 5px">
@@ -17,7 +18,7 @@
       </template>
       <el-submenu index="1-1">
         <template slot="title">人员管理</template>
-        <el-menu-item index="1-1-1">人员信息管理</el-menu-item>
+        <el-menu-item index="/user">人员信息管理</el-menu-item>
         <el-menu-item index="1-1-2">权限管理</el-menu-item>
       </el-submenu>
       <el-menu-item index="1-2">实验室信息管理</el-menu-item>
