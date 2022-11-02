@@ -1,8 +1,8 @@
 package com.wanqing.labspring.service.impl;
 
-import com.wanqing.labspring.entity.User;
-import com.wanqing.labspring.mapper.UserMapper;
-import com.wanqing.labspring.service.IUserService;
+import com.wanqing.labspring.entity.Usered;
+import com.wanqing.labspring.mapper.UseredMapper;
+import com.wanqing.labspring.service.IUseredService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +15,6 @@ import org.springframework.stereotype.Service;
  * @since 2022-11-02
  */
 @Service
-public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IUserService {
+public class UseredServiceImpl extends ServiceImpl<UseredMapper, Usered> implements IUseredService {
 
 }

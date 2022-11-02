@@ -1,6 +1,6 @@
 package com.wanqing.labspring.service;
 
-import com.wanqing.labspring.entity.User;
+import com.wanqing.labspring.entity.Usered;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author 颜朋祥
  * @since 2022-11-02
  */
-public interface IUserService extends IService<User> {
+public interface IUseredService extends IService<Usered> {
 
 }

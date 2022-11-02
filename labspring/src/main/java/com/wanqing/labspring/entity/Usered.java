@@ -9,15 +9,15 @@ import lombok.Setter;
 
 /**
  * <p>
- *
+ * 
  * </p>
  *
  * @author 颜朋祥
- * @since 2022-11-01
+ * @since 2022-11-02
  */
 @Getter
 @Setter
-  public class User implements Serializable {
+  public class Usered implements Serializable {
 
     private static final long serialVersionUID = 1L;
 @TableId
@@ -26,8 +26,6 @@ import lombok.Setter;
     private String name;
 
     private String gender;
-
-
 
     private String tel;
 
@@ -40,4 +38,6 @@ import lombok.Setter;
     private String level;
 
     private LocalDateTime createTime;
+
+
 }

@@ -1,6 +1,6 @@
 package com.wanqing.labspring.mapper;
 
-import com.wanqing.labspring.entity.User;
+import com.wanqing.labspring.entity.Usered;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author 颜朋祥
  * @since 2022-11-02
  */
-public interface UserMapper extends BaseMapper<User> {
+public interface UseredMapper extends BaseMapper<Usered> {
 
 }

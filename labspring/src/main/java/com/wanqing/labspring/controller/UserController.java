@@ -2,6 +2,8 @@ package com.wanqing.labspring.controller;
 
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.wanqing.labspring.entity.Usered;
+import com.wanqing.labspring.service.IUseredService;
 import org.springframework.web.bind.annotation.*;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import javax.annotation.Resource;
@@ -23,9 +25,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/user")
         public class UserController {
-    
+
 @Resource
 private IUserService userService;
+@Resource
+private IUseredService useredService;
 //*新增或更新
 @PostMapping
 public boolean save(@RequestBody User user){
@@ -33,6 +37,8 @@ public boolean save(@RequestBody User user){
         }
 @DeleteMapping("/{username}")
 public Boolean delete(@PathVariable Integer username){
+//        insert into insertTest select * frominsertTest2;
+//       useredService.saveOrUpdate(usered);
         return userService.removeById(username);
         }
 @PostMapping("/del/batch")
