@@ -20,6 +20,7 @@
         <template slot="title">人员管理</template>
         <el-menu-item index="/user">人员信息管理</el-menu-item>
         <el-menu-item index="1-1-2">权限管理</el-menu-item>
+        <el-menu-item index="/usered">已删除人员</el-menu-item>
       </el-submenu>
       <el-menu-item index="1-2">实验室信息管理</el-menu-item>
       <el-menu-item index="1-3">规章制度管理</el-menu-item>
