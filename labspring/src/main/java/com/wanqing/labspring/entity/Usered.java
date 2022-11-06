@@ -21,7 +21,7 @@ import lombok.Setter;
 
     private static final long serialVersionUID = 1L;
 @TableId
-      private Integer username;
+      private String username;
 
     private String name;
 

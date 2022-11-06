@@ -1,15 +1,38 @@
-/*
-* 在这里创建定义实体类
-* */
 package com.wanqing.labspring.entity;
 
-import lombok.Data;
+import java.io.Serializable;
+import java.time.LocalDateTime;
 
-@Data
-//*登陆类
-public class Login {
-    //*用户名
-    private Integer username;
-    //*登陆密码
-    private String password;
+import com.baomidou.mybatisplus.annotation.TableId;
+import lombok.Getter;
+import lombok.Setter;
+
+/**
+ * <p>
+ * 
+ * </p>
+ *
+ * @author 颜朋祥
+ * @since 2022-11-05
+ */
+@Getter
+@Setter
+  public class Login implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+      /**
+     * 登陆用户名
+     */
+      @TableId
+        private String username;
+      /**
+     * 登陆密码
+     */
+      private String password;
+      /**
+     * 创建时间
+     */
+      private LocalDateTime createTime;
+
 }
