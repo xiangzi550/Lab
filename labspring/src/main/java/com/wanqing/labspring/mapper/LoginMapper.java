@@ -1,16 +1,23 @@
+/*
+* 数据库查询的接口
+* */
 package com.wanqing.labspring.mapper;
 
 import com.wanqing.labspring.entity.Login;
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
+import org.springframework.stereotype.Component;
 
-/**
- * <p>
- *  Mapper 接口
- * </p>
- *
- * @author 颜朋祥
- * @since 2022-11-05
- */
-public interface LoginMapper extends BaseMapper<Login> {
+import java.util.List;
+//@Mapper
+@Component
+public interface LoginMapper {
+//数据库查询出来的是一个list
+    @Select("select * from login")
+    List<Login> findAll();
+    @Insert("insert into login(username,password) values (#{username},#{password})")
+    int insert(Login login);
 
+    int update(Login login);
 }
