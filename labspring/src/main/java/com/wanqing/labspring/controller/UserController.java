@@ -146,7 +146,7 @@ public User findOne(@PathVariable Integer username) {
                 List<User> users = CollUtil.newArrayList();
                 for (List<Object> row : list) {
                         User user = new User();
-                        user.setUsername(row.get(0).toString());
+                        user.setUsername(Integer.valueOf(row.get(0).toString()));
                         user.setName(row.get(1).toString());
                         user.setGender(row.get(2).toString());
                         user.setTel(row.get(3).toString());
