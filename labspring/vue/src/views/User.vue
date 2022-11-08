@@ -51,7 +51,7 @@
         type="selection"
         width="55">
     </el-table-column>
-    <el-table-column prop="username" label="用户名" fit width="fit">          </el-table-column>
+    <el-table-column prop="username" label="用户名" >          </el-table-column>
     <el-table-column prop="name" label="姓名" width="100">          </el-table-column>
     <el-table-column prop="gender" label="性别" >              </el-table-column>
     <el-table-column prop="age" label="年龄" >         </el-table-column>
@@ -171,13 +171,13 @@ export default {
         }
       }).then(res => {
             console.log(res)
-            this.tableData = res.records
-            this.total= res.total
+            this.tableData = res.data.records
+            this.total= res.data.total
           })
     },
     save(){
       this.request.post("/user",this.form).then(res=>{
-        if(res) {
+        if(res.data) {
           this.$message.success("添加成功")
           this.dialogFormVisible=false
           this.load()
@@ -199,7 +199,7 @@ export default {
     //*删除数据
     del(username){
       this.request.delete("/user/"+username).then(res=>{
-        if(res){
+        if(res.data){
           this.$message.success("删除成功")
           this.load()
         } else{
@@ -214,7 +214,7 @@ export default {
     delBatch(){
       let usernames=this.multipleSelection.map(v => v.username)//把对象数组编程纯数字数组[{} {} {}]->[1,2,3]
       this.request.post("/user/del/batch",usernames).then(res=>{
-        if(res){
+        if(res.data){
           this.$message.success("批量删除成功")
           this.load()
         } else{

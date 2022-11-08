@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
+import cn.hutool.core.annotation.Alias;
 import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Getter;
 import lombok.Setter;
@@ -21,11 +22,13 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-  public class User implements Serializable {
+public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
-@TableId
-      private String username;
+    @TableId
+    private String username;
+
+    private String password;
 
     private String name;
 

@@ -13,6 +13,8 @@ const routes = [
       {path:'home',name:'Home', component: ()=> import('../views/Home.vue')},
       {path:'user',name:'User', component: ()=> import('../views/User.vue')},
       {path:'usered',name:'Usered', component: ()=> import('../views/Usered.vue')},
+      {path:'faculty',name:'Faculty', component: ()=> import('../views/Faculty.vue')},
+      {path:'person',name:'个人信息', component: ()=> import('../views/Person.vue')},
     ]
   },
   {
@@ -24,10 +26,15 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   },
   {
-    path: '/Login',
+    path: '/login',
     name: 'Login',
     component: () => import('../views/Login.vue')
-  }
+  },
+  {
+  path: '/register',
+      name: 'Register',
+      component: () => import('../views/Register.vue')
+},
 ]
 
 const router = new VueRouter({

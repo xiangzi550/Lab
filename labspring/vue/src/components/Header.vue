@@ -9,14 +9,14 @@
   </div>
   <el-dropdown style="width: 100px; cursor: pointer">
     <div style="display: inline-block">
-      <img src="" alt=""
-           style="width: 30px; border-radius: 50%; position: relative; top: 10px; right: 5px">
-      <span>王超人</span><i class="el-icon-arrow-down" style="margin-left: 5px"></i>
+<!--      <img src="" alt=""-->
+<!--           style="width: 30px; border-radius: 50%; position: relative; top: 10px; right: 5px">-->
+      <span>{{ user.name }}</span><i class="el-icon-arrow-down" style="margin-left: 5px"></i>
     </div>
     <el-dropdown-menu slot="dropdown" >
-      <el-dropdown-item style="font-size: 16px; padding: 5px 0">个人信息</el-dropdown-item>
+      <el-dropdown-item style="font-size: 16px; padding: 5px 0"><span @click="personinfo">个人信息</span> </el-dropdown-item>
       <el-dropdown-item style="font-size: 16px; padding: 5px 0">
-        <router-link to="/login" style="text-decoration: none">退出</router-link>
+        <span style="text-decoration: none" @click="loginout">退出</span>
       </el-dropdown-item>
     </el-dropdown-menu>
   </el-dropdown>
@@ -35,14 +35,26 @@ export default {
       return this.$store.state.currentPathName;　　//需要监听的数据
     }
   },
-  watch: {
-    currentPathName (newVal, oldVal) {
-      console.log(newVal)
+  // watch: {
+  //   currentPathName (newVal, oldVal) {
+  //     console.log(newVal)
+  //   }
+  // },
+  data() {
+    return {
+      user: localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : {}
     }
   },
-data() {
-  return{}
-}
+  methods:{
+    loginout(){
+      this.$router.push("/login")
+      localStorage.removeItem("user")
+      this.$message.success("退出成功")
+    },
+    personinfo(){
+      this.$router.push("/person")
+    },
+  }
 }
 
 </script>

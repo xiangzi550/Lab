@@ -1,6 +1,6 @@
 package com.wanqing.labspring.service;
 
-import com.wanqing.labspring.entity.Login;
+import com.wanqing.labspring.entity.Faculty;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -9,9 +9,8 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * </p>
  *
  * @author 颜朋祥
- * @since 2022-11-05
+ * @since 2022-11-08
  */
-public interface ILoginService extends IService<Login> {
+public interface IFacultyService extends IService<Faculty> {
 
-    boolean login(Login login);
 }
