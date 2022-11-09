@@ -3,6 +3,7 @@ package ${package.Controller};
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.web.bind.annotation.*;
+import com.wanqing.labspring.common.Result;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import javax.annotation.Resource;
 import java.util.List;
@@ -47,35 +48,35 @@ class ${table.controllerName}#if(${superControllerClass}) : ${superControllerCla
 private ${table.serviceName} ${table.entityPath}Service;
 //*新增或更新
 @PostMapping
-public boolean save(@RequestBody ${entity} ${table.entityPath}){
-        return ${table.entityPath}Service.saveOrUpdate(${table.entityPath});
+public Result save(@RequestBody ${entity} ${table.entityPath}){
+        return Result.success(${table.entityPath}Service.saveOrUpdate(${table.entityPath}));
         }
 @DeleteMapping("/{username}")
-public Boolean delete(@PathVariable Integer username){
-        return ${table.entityPath}Service.removeById(username);
+public Result delete(@PathVariable Integer username){
+        return Result.success(${table.entityPath}Service.removeById(username));
         }
 @PostMapping("/del/batch")
-public boolean deleteBatch(@RequestBody List<Integer> usernames){
-        return ${table.entityPath}Service.removeBatchByIds(usernames);
+public Result deleteBatch(@RequestBody List<Integer> usernames){
+        return Result.success(${table.entityPath}Service.removeBatchByIds(usernames));
         }
 @GetMapping
-public List<${entity}> findAll(){
-        return ${table.entityPath}Service.list();
+public Result findAll(){
+        return Result.success(${table.entityPath}Service.list());
         }
 @GetMapping("/{username}")
-public ${entity} findOne(@PathVariable Integer username) {
-        return ${table.entityPath}Service.getById(username);
+public Result findOne(@PathVariable Integer username) {
+        return Result.success(${table.entityPath}Service.getById(username));
         }
 
 @GetMapping("/page")
-public Page<${entity}> findPage(@RequestParam Integer pageNum,
+public Result findPage(@RequestParam Integer pageNum,
                                 @RequestParam Integer pageSize) {
 
 
 
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
         queryWrapper.orderByDesc("create_time");
-        return ${table.entityPath}Service.page(new Page<>(pageNum, pageSize),queryWrapper);
+        return Result.success(${table.entityPath}Service.page(new Page<>(pageNum, pageSize),queryWrapper));
         }
 
 

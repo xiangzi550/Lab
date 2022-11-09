@@ -15,6 +15,7 @@ const routes = [
       {path:'usered',name:'Usered', component: ()=> import('../views/Usered.vue')},
       {path:'faculty',name:'Faculty', component: ()=> import('../views/Faculty.vue')},
       {path:'person',name:'个人信息', component: ()=> import('../views/Person.vue')},
+      {path:'lab',name:'实验室信息', component: ()=> import('../views/Lab.vue')},
     ]
   },
   {

@@ -12,6 +12,7 @@ import com.wanqing.labspring.common.Result;
 import com.wanqing.labspring.controller.dto.UserDTO;
 import com.wanqing.labspring.entity.Usered;
 import com.wanqing.labspring.service.IUseredService;
+import com.wanqing.labspring.utils.TokenUtils;
 import jdk.nashorn.internal.runtime.regexp.joni.exception.SyntaxException;
 import org.apache.poi.hssf.record.BoolErrRecord;
 import org.springframework.web.bind.annotation.*;
@@ -102,7 +103,11 @@ public class UserController {
     }
 
     @GetMapping("/page")
-    public Result findPage(@RequestParam Integer pageNum, @RequestParam Integer pageSize, @RequestParam(defaultValue = "") String username, @RequestParam(defaultValue = "") String name, @RequestParam(defaultValue = "") String level) {
+    public Result findPage(@RequestParam Integer pageNum,
+                           @RequestParam Integer pageSize,
+                           @RequestParam(defaultValue = "") String username,
+                           @RequestParam(defaultValue = "") String name,
+                           @RequestParam(defaultValue = "") String level) {
 
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
         queryWrapper.orderByDesc("create_time");
@@ -115,7 +120,10 @@ public class UserController {
         if (!"".equals(level)) {
             queryWrapper.like("level", level);
         }
+        User currentUser= TokenUtils.getCurrentUser();
+        System.out.println("++++++++++++++++++++++++++++++++++"+currentUser.getName());
         return Result.success(userService.page(new Page<>(pageNum, pageSize), queryWrapper));
+
     }
 
     //*导出接口
