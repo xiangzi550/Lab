@@ -121,7 +121,7 @@ public class UserController {
             queryWrapper.like("level", level);
         }
         User currentUser= TokenUtils.getCurrentUser();
-        System.out.println("++++++++++++++++++++++++++++++++++"+currentUser.getName());
+        System.out.println(currentUser.getName());
         return Result.success(userService.page(new Page<>(pageNum, pageSize), queryWrapper));
 
     }

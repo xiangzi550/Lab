@@ -9,7 +9,7 @@
   >
     <div style="height: 60px; line-height: 60px; text-align: center">
       <img src="../assets/logo.png" alt="" style="width: 20px; position: relative; top: 5px; right: 5px">
-      <b style="color: white" v-show="logoTextShow">后台管理系统</b>
+      <b style="color: white" v-show="logoTextShow">实验室管理系统</b>
     </div>
     <el-submenu index="1">
       <template slot="title">
@@ -24,7 +24,7 @@
       </el-submenu>
       <el-menu-item index="/lab">实验室信息管理</el-menu-item>
       <el-menu-item index="/faculty">学院信息管理</el-menu-item>
-      <el-menu-item index="1-3">规章制度管理</el-menu-item>
+      <el-menu-item index="/file">规章制度管理</el-menu-item>
 
     </el-submenu>
     <el-submenu index="2">

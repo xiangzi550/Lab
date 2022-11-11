@@ -107,8 +107,8 @@ public Result findPage(@RequestParam Integer pageNum,
                 //自定义标题别名
                 writer.addHeaderAlias("id", "实验室编号");
                 writer.addHeaderAlias("name", "实验室名称");
-                writer.addHeaderAlias("picture", "所属学院");
-                writer.addHeaderAlias("faculty", "实验室照片");
+                writer.addHeaderAlias("faculty", "所属学院");
+                writer.addHeaderAlias("picture", "实验室照片");
                 writer.addHeaderAlias("capacity", "容纳人数");
                 writer.addHeaderAlias("type", "实验室类型");
                 writer.addHeaderAlias("responsibler", "负责人");
@@ -152,8 +152,8 @@ public Result findPage(@RequestParam Integer pageNum,
                         Lab lab=new Lab();
                         lab.setId(row.get(0).toString());
                         lab.setName(row.get(1).toString());
-                        lab.setFaculty(row.get(2).toString());
-                        lab.setPicture(row.get(3).toString());
+                        lab.setPicture(row.get(2).toString());
+                        lab.setFaculty(row.get(3).toString());
                         lab.setCapacity(Integer.valueOf(row.get(4).toString()));
                         lab.setType(row.get(5).toString());
                         lab.setResponsibler(row.get(6).toString());
